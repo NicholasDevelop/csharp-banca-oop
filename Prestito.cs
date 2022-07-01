@@ -4,9 +4,15 @@
     {
         Cliente intestatario;
 
+
         int Amount { get; set; }
         int Rate { get; set; }
         DateTime startDate { get; set; }
         DateTime finishDate { get; set; }
+
+        public Prestito(int amount)
+        {
+            Amount = amount;
+        }
     }
 }

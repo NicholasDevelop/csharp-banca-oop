@@ -20,6 +20,15 @@ namespace csharp_banca_oop
             prestiti = new List<Prestito>();
         }
 
+        public static void StampaTitolo(string titolo, string sottotitolo)
+        {
+            Console.WriteLine("**** {0} ****", titolo);
+            Console.WriteLine();
+            Console.WriteLine(sottotitolo);
+            Console.WriteLine();
+        }
+
+        /* METODI CLIENTE */
         public void NewClient(Cliente cliente)
         {
             clienti.Add(cliente);
@@ -48,17 +57,9 @@ namespace csharp_banca_oop
             }
         }
 
-        public static void StampaTitolo(string titolo, string sottotitolo)
-        {
-            Console.WriteLine("**** {0} ****", titolo);
-            Console.WriteLine();
-            Console.WriteLine(sottotitolo);
-            Console.WriteLine();
-        }
-
         internal static int ClientRequest()
         {
-            Console.Write("/tInserisci il nome: ");
+            Console.Write("/tInserisci il numero dell'utente: ");
             int numClient = int.Parse(Console.ReadLine());
 
             return numClient;
@@ -75,7 +76,33 @@ namespace csharp_banca_oop
             }
 
             return clienti[indexClient];
-            
+        }
+
+        internal static void ModifyClient(Cliente client)
+        {
+            if (client != null)
+            {
+                Cliente clientChanges = Banca.CreateClient();
+                //client.Name = clientChanges.;
+                //client.cognome = clientChanges.cognome;
+            }
+        }
+
+        /* METODI PRESTITO */
+        public static Prestito CreateLoan()
+        {
+            Banca.StampaTitolo("Creazione nuovo prestito", "Inserisci il nuovo prestito");
+
+            Console.Write("/tInserisci il l'ammontare: ");
+            int amount = int.Parse(Console.ReadLine());
+
+            Prestito nuovo = new Prestito(amount);
+            return nuovo;
+        }
+
+        public void NewLoan(Prestito prestito)
+        {
+            prestiti.Add(prestito);
         }
     }
     
