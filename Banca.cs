@@ -8,7 +8,20 @@ namespace csharp_banca_oop
 {
     internal class Banca
     {
-        string Name { get; set; }
+
+        private string name;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
+
         List<Cliente> clienti;
 
         List<Prestito> prestiti;
@@ -28,6 +41,11 @@ namespace csharp_banca_oop
             Console.WriteLine();
         }
 
+        internal static Prestito SearchLoan()
+        {
+            throw new NotImplementedException();
+        }
+
         /* METODI CLIENTE */
         public void NewClient(Cliente cliente)
         {
@@ -41,7 +59,13 @@ namespace csharp_banca_oop
             Console.Write("/tInserisci il nome: ");
             string name = Console.ReadLine();
 
-            Cliente nuovo = new Cliente(name);
+            Console.Write("/tInserisci il cognome: ");
+            string surname = Console.ReadLine();
+
+            Console.Write("/tInserisci il codice fiscale: ");
+            string fiscalCode = Console.ReadLine();
+
+            Cliente nuovo = new Cliente(name, surname, fiscalCode);
             return nuovo;
         }
         internal void ClientList()
@@ -83,8 +107,9 @@ namespace csharp_banca_oop
             if (client != null)
             {
                 Cliente clientChanges = Banca.CreateClient();
-                //client.Name = clientChanges.;
-                //client.cognome = clientChanges.cognome;
+                client.Name = clientChanges.Name;
+                client.Surname = clientChanges.Surname;
+                client.Fiscalcode = clientChanges.Fiscalcode;
             }
         }
 
@@ -103,6 +128,19 @@ namespace csharp_banca_oop
         public void NewLoan(Prestito prestito)
         {
             prestiti.Add(prestito);
+        }
+
+        internal void LoanList()
+        {
+            Banca.StampaTitolo("Lista prestiti", "");
+
+            int pos = 1;
+            foreach (Prestito prestito in prestiti)
+            {
+                Console.WriteLine(pos + ". ");
+                prestito.Stampa();
+                pos++;
+            }
         }
     }
     

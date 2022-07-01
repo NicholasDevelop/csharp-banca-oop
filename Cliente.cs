@@ -2,14 +2,51 @@
 {
     internal class Cliente
     {
-        public Cliente(string name)
+        public Cliente(string name, string surname, string fiscalCode)
         {
             Name = name;
+            Surname = surname;
+            FiscalCode = fiscalCode;
         }
 
-        string Name { get; set; }
-        string Surname { get; set; }
-        string FiscalCode { get; set; }
+        private string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
+
+        private string surname;
+        public string Surname
+        {
+            get
+            {
+                return surname;
+            }
+            set
+            {
+                this.surname = value;
+            }
+        }
+        string fiscalCode;
+        public string Fiscalcode
+        {
+            get
+            {
+                return fiscalCode;
+            }
+            set
+            {
+                this.fiscalCode = value;
+            }
+        }
         int Salary { get; set; }
 
         internal void Stampa()

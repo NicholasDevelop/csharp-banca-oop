@@ -14,5 +14,10 @@
         {
             Amount = amount;
         }
+
+        internal void Stampa()
+        {
+            Console.WriteLine("Nome: " + this.Amount);
+        }
     }
 }
