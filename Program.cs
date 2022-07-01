@@ -18,8 +18,10 @@ Banca.ModifyClient(client);                     //Modifica cliente
 bank.ClientList();
 
 /* Aggiunta di un prestito */
-Prestito newLoan = Banca.CreateLoan();
+//Prestito newLoan = Banca.CreateLoan();
+Prestito newLoan = bank.CreateLoan(client, 2500);
 bank.NewLoan(newLoan);
+bank.LoanList();
 
 /* Ricerca prestito tramite codice fiscale */
-Prestito clientLoan = Banca.SearchLoan();
+//Prestito clientLoan = Banca.SearchLoan();

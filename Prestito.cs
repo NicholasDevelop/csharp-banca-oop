@@ -2,16 +2,39 @@
 {
     internal class Prestito
     {
-        Cliente intestatario;
+        private Cliente intestatario;
+        public Cliente Intestatario
+        {
+            get
+            {
+                return intestatario;
+            }
+            set
+            {
+                this.intestatario = value;
+            }
+        }
 
 
-        int Amount { get; set; }
+        private int amount;
+        public int Amount
+        {
+            get
+            {
+                return amount;
+            }
+            set
+            {
+                this.amount = value;
+            }
+        }
         int Rate { get; set; }
         DateTime startDate { get; set; }
         DateTime finishDate { get; set; }
 
-        public Prestito(int amount)
+        public Prestito(Cliente intestatario, int amount)
         {
+            this.intestatario = intestatario;
             Amount = amount;
         }
 
@@ -19,5 +42,7 @@
         {
             Console.WriteLine("Nome: " + this.Amount);
         }
+
+
     }
 }

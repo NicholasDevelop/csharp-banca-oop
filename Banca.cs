@@ -41,10 +41,6 @@ namespace csharp_banca_oop
             Console.WriteLine();
         }
 
-        internal static Prestito SearchLoan()
-        {
-            throw new NotImplementedException();
-        }
 
         /* METODI CLIENTE */
         public void NewClient(Cliente cliente)
@@ -83,7 +79,7 @@ namespace csharp_banca_oop
 
         internal static int ClientRequest()
         {
-            Console.Write("/tInserisci il numero dell'utente: ");
+            Console.Write("/tInserisci il numero dell'utente da modificare: ");
             int numClient = int.Parse(Console.ReadLine());
 
             return numClient;
@@ -109,20 +105,27 @@ namespace csharp_banca_oop
                 Cliente clientChanges = Banca.CreateClient();
                 client.Name = clientChanges.Name;
                 client.Surname = clientChanges.Surname;
-                client.Fiscalcode = clientChanges.Fiscalcode;
+                client.FiscalCode = clientChanges.FiscalCode;
             }
         }
 
         /* METODI PRESTITO */
-        public static Prestito CreateLoan()
+
+
+        //public static Prestito CreateLoan()
+        //{
+        //    Banca.StampaTitolo("Creazione nuovo prestito", "Inserisci il nuovo prestito");
+
+        //    Console.Write("/tInserisci il l'ammontare: ");
+        //    int amount = int.Parse(Console.ReadLine());
+
+        //    Prestito nuovo = new Prestito(, amount);
+        //    return nuovo;
+        //}
+
+        public Prestito CreateLoan(Cliente intestatario, int amount)
         {
-            Banca.StampaTitolo("Creazione nuovo prestito", "Inserisci il nuovo prestito");
-
-            Console.Write("/tInserisci il l'ammontare: ");
-            int amount = int.Parse(Console.ReadLine());
-
-            Prestito nuovo = new Prestito(amount);
-            return nuovo;
+            return new Prestito(intestatario, amount);
         }
 
         public void NewLoan(Prestito prestito)
@@ -142,6 +145,11 @@ namespace csharp_banca_oop
                 pos++;
             }
         }
+
+        //internal static Prestito SearchLoan()
+        //{
+            
+        //}
     }
     
 }

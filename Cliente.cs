@@ -35,12 +35,13 @@
                 this.surname = value;
             }
         }
-        string fiscalCode;
-        public string Fiscalcode
+
+        private string fiscalCode;
+        public string FiscalCode
         {
             get
             {
-                return fiscalCode;
+                return this.fiscalCode;
             }
             set
             {
