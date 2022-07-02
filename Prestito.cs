@@ -16,8 +16,8 @@
         }
 
 
-        private int amount;
-        public int Amount
+        private float amount;
+        public float Amount
         {
             get
             {
@@ -28,14 +28,50 @@
                 this.amount = value;
             }
         }
-        int Rate { get; set; }
-        DateTime startDate { get; set; }
-        DateTime finishDate { get; set; }
+        private int rate;
+        public int Rate
+        {
+            get
+            {
+                return rate;
+            }
+            set
+            {
+                this.rate = value;
+            }
+        }
+        private DateTime startDate;
+        public DateTime StartDate
+        {
+            get
+            {
+                return startDate;
+            }
+            set
+            {
+                this.startDate = value;
+            }
+        }
+        private DateTime finishDate;
+        public DateTime FinishDate
+        {
+            get
+            {
+                return finishDate;
+            }
+            set
+            {
+                this.finishDate = value;
+            }
+        }
 
-        public Prestito(Cliente intestatario, int amount)
+        public Prestito(Cliente intestatario, int amount, int Rate, DateTime startDate, DateTime finishDate)
         {
             this.intestatario = intestatario;
-            Amount = amount;
+            this.Amount = amount;
+            this.Rate = Rate;
+            this.startDate = startDate;
+            this.finishDate = finishDate;
         }
 
         internal void Stampa()

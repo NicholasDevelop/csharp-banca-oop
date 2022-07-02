@@ -123,7 +123,7 @@ namespace csharp_banca_oop
         //    return nuovo;
         //}
 
-        public Prestito CreateLoan(Cliente intestatario, int amount)
+        public Prestito CreateLoan(Cliente intestatario, float amount)
         {
             return new Prestito(intestatario, amount);
         }
