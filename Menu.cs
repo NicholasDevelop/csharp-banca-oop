@@ -46,16 +46,40 @@ namespace csharp_banca_oop
                     Console.WriteLine("---Ricerca Cliente---");
                     int selected = Banca.ClientRequest();
                     Cliente clientSelected = banca.GetClient(selected);
+                    Console.WriteLine(clientSelected.Name + "  " + clientSelected.Surname + "  " + clientSelected.FiscalCode);
                     mainPage(banca);
                     break;
                 case 5:
                     Console.WriteLine("---Inserimento Prestito---");
                     banca.ClientList();
-                    int numClient = Banca.ClientRequest();
+
+                    Console.Write("/nInserire l'indice del cliente:");
+                    int numClient = int.Parse(Console.ReadLine());
                     Cliente client = banca.GetClient(numClient);
-                    Console.WriteLine("A quanto ammonta il prestito?");
+
+                    Console.Write("Inserire l'ammontare del prestito:");
                     float amount = float.Parse(Console.ReadLine());
-                    Prestito loan = banca.CreateLoan(client, amount);
+
+                    Console.Write("Inserire le rate del prestito:");
+                    int rate = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("/n/nData inizio del prestito/n");
+                    string startDate = DateTime.Today.ToString("dd/mm/yyyy");
+                    Console.WriteLine(startDate);
+
+                    Console.WriteLine("Data di fine prestito/n/n");
+                    Console.Write("Inserire il giorno:");
+                    int endLoanDay = int.Parse(Console.ReadLine());
+
+                    Console.Write("Inserire il mese:");
+                    int endLoanMonth = int.Parse(Console.ReadLine());
+
+                    Console.Write("Inserire l'anno:");
+                    int endLoanYear = int.Parse(Console.ReadLine());
+
+                    string endDate = "";
+
+                    Prestito loan = banca.CreateLoan(client, amount, rate, startDate, endDate);
                     Console.WriteLine();
                     Console.WriteLine($"Lista prestiti di banca {banca.Name}");
                     banca.LoanList();
@@ -70,4 +94,6 @@ namespace csharp_banca_oop
                     break;
 
             }
+        }
+    }
 }

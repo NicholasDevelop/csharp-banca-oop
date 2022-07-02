@@ -22,7 +22,7 @@ namespace csharp_banca_oop
             }
         }
 
-        List<Cliente> clienti;
+        public List<Cliente> clienti;
 
         List<Prestito> prestiti;
 
@@ -79,7 +79,7 @@ namespace csharp_banca_oop
 
         internal static int ClientRequest()
         {
-            Console.Write("/tInserisci il numero dell'utente da modificare: ");
+            Console.Write("/tInserisci il numero dell'utente: ");
             int numClient = int.Parse(Console.ReadLine());
 
             return numClient;
@@ -123,9 +123,9 @@ namespace csharp_banca_oop
         //    return nuovo;
         //}
 
-        public Prestito CreateLoan(Cliente intestatario, float amount)
+        public Prestito CreateLoan(Cliente intestatario, float amount, int rate, string startDate, string finishDate)
         {
-            return new Prestito(intestatario, amount);
+            return new Prestito(intestatario, amount, rate, startDate, finishDate);
         }
 
         public void NewLoan(Prestito prestito)

@@ -40,8 +40,8 @@
                 this.rate = value;
             }
         }
-        private DateTime startDate;
-        public DateTime StartDate
+        private string startDate;
+        public string StartDate
         {
             get
             {
@@ -52,8 +52,8 @@
                 this.startDate = value;
             }
         }
-        private DateTime finishDate;
-        public DateTime FinishDate
+        private string finishDate;
+        public string FinishDate
         {
             get
             {
@@ -65,7 +65,7 @@
             }
         }
 
-        public Prestito(Cliente intestatario, int amount, int Rate, DateTime startDate, DateTime finishDate)
+        public Prestito(Cliente intestatario, float amount, int Rate, string startDate, string finishDate)
         {
             this.intestatario = intestatario;
             this.Amount = amount;

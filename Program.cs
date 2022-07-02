@@ -14,4 +14,14 @@ bank.NewClient(fakeClient3);
 bank.NewClient(fakeClient4);
 
 
+Prestito fakeLoan1 = new Prestito(bank.clienti[0], 30000, 120, "05/07/2020", "05/07/2030");
+Prestito fakeLoan2 = new Prestito(bank.clienti[0], 10000, 120, "02/09/20218", "02/09/2028");
+Prestito fakeLoan3 = new Prestito(bank.clienti[1], 25000, 120, "26/01/2020", "26/01/2030");
+Prestito fakeLoan4 = new Prestito(bank.clienti[2], 45000, 120, "17/11/2020", "17/11/2030");
+bank.NewLoan(fakeLoan1);
+bank.NewLoan(fakeLoan2);
+bank.NewLoan(fakeLoan3);
+bank.NewLoan(fakeLoan4);
+
+
 Menu.mainPage(bank);

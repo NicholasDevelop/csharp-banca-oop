@@ -53,6 +53,8 @@
         internal void Stampa()
         {
             Console.WriteLine("Nome: " + this.Name);
+            Console.WriteLine("Cognome: " + this.Surname);
+            Console.WriteLine("Codice fiscale: " + this.fiscalCode);
         }
     }
 }
