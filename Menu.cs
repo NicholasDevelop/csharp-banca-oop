@@ -20,7 +20,7 @@ namespace csharp_banca_oop
             Console.WriteLine("6. Lista prestiti");
             Console.WriteLine("7. Ricerca prestiti tramite codice fiscale"); 
             Console.WriteLine("8. Ricerca la somma dei prestiti tramite codice fiscale");
-            Console.WriteLine("9. Esci dal programma\n");
+            Console.WriteLine("0. Esci dal programma\n");
 
             uint input = Convert.ToUInt32(Console.ReadLine());
 
@@ -93,17 +93,18 @@ namespace csharp_banca_oop
                     break;
                 case 7:
                     Console.WriteLine("---Ricerca prestiti tramite codice fiscale---");
-                    Cliente UserLoans = banca.SearchLoan();
-                    UserLoans.Stampa();
+                    //Cliente UserLoans = banca.SearchLoan();
+                    //UserLoans.Stampa();
+                    banca.SearchLoan();
                     mainPage(banca);
                     break;
                 case 8:
                     Console.WriteLine("---Ricerca la somma dei prestiti tramite codice fiscale---");
-                    float sumLoanUser = banca.SumLoanUser();
-                    Console.Write(sumLoanUser);
+                    //float sumLoanUser = banca.SumLoanUser();
+                    banca.SumLoanUser();
                     mainPage(banca);
                     break;
-                case 9:
+                case 0:
                     return;
                     break;
 

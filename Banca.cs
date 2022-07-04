@@ -146,21 +146,29 @@ namespace csharp_banca_oop
             }
         }
 
-        public Cliente SearchLoan()
+        public void SearchLoan()
         {
             Console.WriteLine("Inserisci il codice fiscale del cliente di cui vedere i prestiti");
             string clientFiscalCode = Console.ReadLine();
+            Console.WriteLine($"L'utente ha i seguenti prestiti: ");
+            bool variable = true;
             foreach (Prestito prestito in prestiti)
             {
                 if (clientFiscalCode == prestito.Intestatario.FiscalCode)
                 {
-                    return prestito.Intestatario;
+                    variable = false;
+                    Console.WriteLine($"{prestito.Amount}");
+                    
+                    //return prestito.Intestatario;
                 }
             }
-            return null;
+            if(variable == true)
+            {
+                    Console.WriteLine("Questo utente non ha prestiti");
+            }
         }
 
-        public float SumLoanUser()
+        public void SumLoanUser()
         {
             Console.WriteLine("Inserisci il codice fiscale del cliente di cui vedere la somma dei prestiti");
             string clientFiscalCode = Console.ReadLine();
@@ -172,7 +180,7 @@ namespace csharp_banca_oop
                     sum = sum + prestito.Amount;
                 }
             }
-            return sum;
+            Console.WriteLine($"La somma dei prestiti ammonta a {sum} euro");
         }
     }
     
