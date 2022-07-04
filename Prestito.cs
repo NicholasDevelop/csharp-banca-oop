@@ -76,7 +76,7 @@
 
         internal void Stampa()
         {
-            Console.WriteLine("Nome: " + this.Amount);
+            Console.WriteLine($"Intestatario: {this.Intestatario.Name}  Ammontare del prestito: {this.Amount} ");
         }
 
 
